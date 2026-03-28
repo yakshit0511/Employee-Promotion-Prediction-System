@@ -4,26 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Promotion Prediction System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Background gradient shapes -->
+    <div class="bg-shapes"></div>
+    <div class="grid-overlay"></div>
+
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1>🎯 Employee Promotion Prediction System</h1>
-                <p>Predict employee promotion eligibility using machine learning</p>
+        <!-- Hero Header -->
+        <header class="hero-header">
+            <div class="hero-content">
+                <div class="floating-icon">🎯</div>
+                <h1 class="hero-title">Employee Promotion Prediction</h1>
+                <p class="hero-tagline">AI-Powered Career Growth Analysis</p>
             </div>
         </header>
 
         <!-- Main Content -->
         <main class="main-content">
-            <div class="content-wrapper">
-                <!-- Input Form -->
-                <section class="form-section">
-                    <div class="card">
-                        <h2>📝 Employee Information</h2>
-                        <form id="predictionForm" class="prediction-form">
+            <div class="content-grid">
+                <!-- Employee Information Card -->
+                <section class="form-card glass-card" data-tilt>
+                    <div class="card-header">
+                        <h2>Employee Information</h2>
+                        <p class="card-subtitle">Enter your performance metrics</p>
+                    </div>
+                            <form id="predictionForm" class="prediction-form">
                             <div class="form-grid">
                                 <!-- Age -->
                                 <div class="form-group">
@@ -46,14 +54,14 @@
 
                                 <!-- Previous Year Rating -->
                                 <div class="form-group">
-                                    <label for="previous_year_rating">Previous Year Rating</label>
+                                    <label for="previous_year_rating">Performance Rating</label>
                                     <select id="previous_year_rating" name="previous_year_rating" required>
                                         <option value="">-- Select Rating (1-5) --</option>
-                                        <option value="1">1 - Poor</option>
-                                        <option value="2">2 - Below Average</option>
-                                        <option value="3">3 - Average</option>
-                                        <option value="4">4 - Good</option>
-                                        <option value="5">5 - Excellent</option>
+                                        <option value="1">⭐ 1 - Poor</option>
+                                        <option value="2">⭐⭐ 2 - Below Average</option>
+                                        <option value="3">⭐⭐⭐ 3 - Average</option>
+                                        <option value="4">⭐⭐⭐⭐ 4 - Good</option>
+                                        <option value="5">⭐⭐⭐⭐⭐ 5 - Excellent</option>
                                     </select>
                                 </div>
 
@@ -68,33 +76,33 @@
                                 <div class="form-group">
                                     <label for="kpis_met">KPIs Met >80%</label>
                                     <select id="kpis_met" name="kpis_met" required>
-                                        <option value="">-- Yes or No --</option>
-                                        <option value="0">No</option>
-                                        <option value="1">Yes</option>
+                                        <option value="">-- Select --</option>
+                                        <option value="0">❌ No</option>
+                                        <option value="1">✅ Yes</option>
                                     </select>
                                 </div>
 
                                 <!-- Awards Won -->
                                 <div class="form-group">
-                                    <label for="awards_won">Awards Won</label>
+                                    <label for="awards_won">Awards & Recognition</label>
                                     <input type="number" id="awards_won" name="awards_won" min="0" max="10" placeholder="Enter number (e.g., 2)" required>
                                 </div>
 
                                 <!-- Average Training Score -->
                                 <div class="form-group">
-                                    <label for="avg_training_score">Avg Training Score (0-100)</label>
+                                    <label for="avg_training_score">Training Score (0-100)</label>
                                     <input type="number" id="avg_training_score" name="avg_training_score" 
                                            min="0" max="100" placeholder="Enter score (e.g., 85)" required>
                                 </div>
 
                                 <!-- Number of Trainings -->
                                 <div class="form-group">
-                                    <label for="no_of_trainings">Number of Trainings Completed</label>
+                                    <label for="no_of_trainings">Trainings Completed</label>
                                     <input type="number" id="no_of_trainings" name="no_of_trainings" 
                                            min="0" max="20" placeholder="Enter count (e.g., 4)" required>
                                 </div>
 
-                                <!-- Hidden fields for model compatibility (set to default values) -->
+                                <!-- Hidden fields for model compatibility -->
                                 <input type="hidden" id="region" name="region" value="0">
                                 <input type="hidden" id="education" name="education" value="0">
                                 <input type="hidden" id="gender" name="gender" value="0">
@@ -103,20 +111,31 @@
 
                             <!-- Buttons -->
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-predict">🚀 Predict Promotion</button>
-                                <button type="button" class="btn btn-secondary" onclick="loadSampleData()">📋 Sample</button>
-                                <button type="reset" class="btn btn-secondary">🔄 Clear</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="btn-icon">🚀</span>
+                                    <span>Predict</span>
+                                </button>
+                                <button type="button" class="btn btn-ghost" onclick="loadSampleData()">
+                                    <span class="btn-icon">📋</span>
+                                    <span>Sample</span>
+                                </button>
+                                <button type="reset" class="btn btn-ghost">
+                                    <span class="btn-icon">🔄</span>
+                                    <span>Clear</span>
+                                </button>
                             </div>
                         </form>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Results Section -->
-                <section class="results-section">
-                    <div class="card">
-                        <h2>📊 Prediction Results</h2>
-                        <div id="resultsContainer" class="results-placeholder">
-                            <p>Fill the form and click "Predict Promotion" to see results here</p>
+                <!-- Results Card -->
+                <section class="results-card glass-card" data-tilt>
+                    <div class="card-header">
+                        <h2>Prediction Results</h2>
+                        <p class="card-subtitle">Analysis & insights</p>
+                    </div>
+                    <div id="resultsContainer" class="results-placeholder">
+                        <div class="placeholder-content">
+                            <p>📊 Results will appear here</p>
                         </div>
                     </div>
                 </section>
@@ -125,14 +144,19 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>🤖 Powered by XGBoost ML Model | Accuracy: 96.5% | © 2026</p>
+            <div class="footer-content">
+                <p>🤖 Powered by XGBoost ML Model</p>
+                <p>Accuracy: 96.5% | © 2026</p>
+            </div>
         </footer>
     </div>
 
     <!-- Loading Spinner -->
     <div id="loadingSpinner" class="loading-spinner" style="display: none;">
-        <div class="spinner"></div>
-        <p>Predicting...</p>
+        <div class="spinner">
+            <div class="spinner-dot"></div>
+        </div>
+        <p>Analyzing your data...</p>
     </div>
 
     <!-- Scripts -->
