@@ -28,8 +28,7 @@
                                 <!-- Age -->
                                 <div class="form-group">
                                     <label for="age">Age (years)</label>
-                                    <input type="number" id="age" name="age" min="18" max="70" value="35" required>
-                                    <small>Employee's current age</small>
+                                    <input type="number" id="age" name="age" min="18" max="70" placeholder="Enter age (e.g., 35)" required>
                                 </div>
 
                                 <!-- Department -->
@@ -41,107 +40,72 @@
                                         <option value="1">Operations</option>
                                         <option value="2">Technology</option>
                                         <option value="3">Finance</option>
-                                        <option value="4">HR & Admin</option>
-                                        <option value="5">Other</option>
-                                    </select>
-                                </div>
-
-                                <!-- Region -->
-                                <div class="form-group">
-                                    <label for="region">Region</label>
-                                    <select id="region" name="region" required>
-                                        <option value="0">-- Select Region --</option>
-                                        <option value="1">North</option>
-                                        <option value="2">South</option>
-                                        <option value="3">East</option>
-                                        <option value="4">West</option>
-                                        <option value="5">Central</option>
-                                    </select>
-                                </div>
-
-                                <!-- Education -->
-                                <div class="form-group">
-                                    <label for="education">Education Level</label>
-                                    <select id="education" name="education" required>
-                                        <option value="0">-- Select Education --</option>
-                                        <option value="1">Bachelor's</option>
-                                        <option value="2">Master's</option>
-                                        <option value="3">PhD</option>
-                                        <option value="4">Diploma</option>
-                                    </select>
-                                </div>
-
-                                <!-- Gender -->
-                                <div class="form-group">
-                                    <label for="gender">Gender</label>
-                                    <select id="gender" name="gender" required>
-                                        <option value="">-- Select Gender --</option>
-                                        <option value="0">Male</option>
-                                        <option value="1">Female</option>
-                                    </select>
-                                </div>
-
-                                <!-- Recruitment Channel -->
-                                <div class="form-group">
-                                    <label for="recruitment_channel">Recruitment Channel</label>
-                                    <select id="recruitment_channel" name="recruitment_channel" required>
-                                        <option value="">-- Select Channel --</option>
-                                        <option value="0">LinkedIn</option>
-                                        <option value="1">Direct</option>
-                                        <option value="2">Referral</option>
-                                        <option value="3">Other</option>
+                                        <option value="4">HR</option>
                                     </select>
                                 </div>
 
                                 <!-- Previous Year Rating -->
                                 <div class="form-group">
-                                    <label for="previous_year_rating">Previous Year Rating (1-5)</label>
-                                    <input type="number" id="previous_year_rating" name="previous_year_rating" 
-                                           min="1" max="5" step="0.5" value="3.5" required>
+                                    <label for="previous_year_rating">Previous Year Rating</label>
+                                    <select id="previous_year_rating" name="previous_year_rating" required>
+                                        <option value="">-- Select Rating (1-5) --</option>
+                                        <option value="1">1 - Poor</option>
+                                        <option value="2">2 - Below Average</option>
+                                        <option value="3">3 - Average</option>
+                                        <option value="4">4 - Good</option>
+                                        <option value="5">5 - Excellent</option>
+                                    </select>
                                 </div>
 
                                 <!-- Length of Service -->
                                 <div class="form-group">
                                     <label for="length_of_service">Length of Service (years)</label>
                                     <input type="number" id="length_of_service" name="length_of_service" 
-                                           min="0" max="50" value="5" required>
+                                           min="0" max="50" placeholder="Enter years (e.g., 5)" required>
                                 </div>
 
                                 <!-- KPIs Met -->
                                 <div class="form-group">
                                     <label for="kpis_met">KPIs Met >80%</label>
                                     <select id="kpis_met" name="kpis_met" required>
+                                        <option value="">-- Yes or No --</option>
                                         <option value="0">No</option>
-                                        <option value="1" selected>Yes</option>
+                                        <option value="1">Yes</option>
                                     </select>
                                 </div>
 
                                 <!-- Awards Won -->
                                 <div class="form-group">
                                     <label for="awards_won">Awards Won</label>
-                                    <input type="number" id="awards_won" name="awards_won" min="0" max="10" value="0" required>
+                                    <input type="number" id="awards_won" name="awards_won" min="0" max="10" placeholder="Enter number (e.g., 2)" required>
                                 </div>
 
                                 <!-- Average Training Score -->
                                 <div class="form-group">
                                     <label for="avg_training_score">Avg Training Score (0-100)</label>
                                     <input type="number" id="avg_training_score" name="avg_training_score" 
-                                           min="0" max="100" value="75" required>
+                                           min="0" max="100" placeholder="Enter score (e.g., 85)" required>
                                 </div>
 
                                 <!-- Number of Trainings -->
                                 <div class="form-group">
-                                    <label for="no_of_trainings">Number of Trainings</label>
+                                    <label for="no_of_trainings">Number of Trainings Completed</label>
                                     <input type="number" id="no_of_trainings" name="no_of_trainings" 
-                                           min="0" max="20" value="3" required>
+                                           min="0" max="20" placeholder="Enter count (e.g., 4)" required>
                                 </div>
+
+                                <!-- Hidden fields for model compatibility (set to default values) -->
+                                <input type="hidden" id="region" name="region" value="0">
+                                <input type="hidden" id="education" name="education" value="0">
+                                <input type="hidden" id="gender" name="gender" value="0">
+                                <input type="hidden" id="recruitment_channel" name="recruitment_channel" value="0">
                             </div>
 
                             <!-- Buttons -->
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-predict">🚀 Predict Promotion</button>
-                                <button type="button" class="btn btn-secondary" onclick="loadSampleData()">📋 Load Sample Data</button>
-                                <button type="reset" class="btn btn-secondary">🔄 Clear Form</button>
+                                <button type="button" class="btn btn-secondary" onclick="loadSampleData()">📋 Sample</button>
+                                <button type="reset" class="btn btn-secondary">🔄 Clear</button>
                             </div>
                         </form>
                     </div>
@@ -161,7 +125,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>🤖 Powered by XGBoost ML Model | Accuracy: 96.5% | © 2024</p>
+            <p>🤖 Powered by XGBoost ML Model | Accuracy: 96.5% | © 2026</p>
         </footer>
     </div>
 
