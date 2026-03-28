@@ -1,5 +1,11 @@
 # 🎯 Employee Promotion Prediction System
 
+## 🌐 **Live Demo**
+
+👉 **[Click here to try the app](https://employee-promotion-system.onrender.com/)**
+
+---
+
 ## 📄 **Project Overview**
 
 This project focuses on building a **Machine Learning Model** to predict whether employees are eligible for a promotion based on their performance, achievements, and other attributes. The solution is designed to help HR departments make data-driven decisions while ensuring fairness and efficiency.
