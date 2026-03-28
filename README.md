@@ -380,6 +380,3 @@ For questions or feedback, please reach out to me at - [LinkedIn Profile](www.li
 ---
 
 ### ✨ Thank you for exploring this project! 😊
-#   E m p l o y e e - P r o m o t i o n - P r e d i c t i o n - S y s t e m 
- 
- 
