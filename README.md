@@ -239,6 +239,24 @@ Number of Trainings: 6
 
 ### Features of the Web Interface
 
+#### 📸 User Interface Screenshots
+
+**1. Hero Header & Input Form**
+![UI - Form Input](images/ui-form-input.png)
+*Enter employee details and performance metrics with an intuitive form interface*
+
+**2. Prediction Result - Promoted**
+![UI - Promoted Result](images/ui-promoted.png)
+*Real-time prediction showing promotion eligibility with confidence scores and interpretation*
+
+**3. Prediction Result - Not Promoted**
+![UI - Not Promoted Result](images/ui-not-promoted.png)
+*Detailed analysis showing why an employee may not be ready for promotion with actionable insights*
+
+---
+
+#### ✨ Key Features
+
 - **🎨 Clean, Responsive Design**: Works on desktop, tablet, and mobile devices
 - **⚡ Real-time Predictions**: Get results instantly
 - **📊 Visual Confidence Bars**: Intuitive representation of prediction confidence
